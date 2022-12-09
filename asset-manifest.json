@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/zoo-logic-v3/static/css/main.073c9b0a.css",
+    "main.js": "/zoo-logic-v3/static/js/main.3a8510c2.js",
+    "static/js/787.6caa6aa3.chunk.js": "/zoo-logic-v3/static/js/787.6caa6aa3.chunk.js",
+    "static/media/logo.svg": "/zoo-logic-v3/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/zoo-logic-v3/index.html",
+    "main.073c9b0a.css.map": "/zoo-logic-v3/static/css/main.073c9b0a.css.map",
+    "main.3a8510c2.js.map": "/zoo-logic-v3/static/js/main.3a8510c2.js.map",
+    "787.6caa6aa3.chunk.js.map": "/zoo-logic-v3/static/js/787.6caa6aa3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.3a8510c2.js"
+  ]
+}
