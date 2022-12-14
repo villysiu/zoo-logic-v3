@@ -1,22 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import Game from './components/Game';
 
 function App() {
+  const size = useWindowSize();
+    
+    function useWindowSize() {
+        
+        const [windowSize, setWindowSize] = useState({
+          width: undefined,
+          height: undefined,
+        });
+
+        useEffect(() => {
+          function handleResize() {
+            
+            setWindowSize({
+              width: window.innerWidth,
+              height: window.innerHeight,
+            });
+          }
+          
+          window.addEventListener("resize", handleResize);
+          
+          handleResize();
+          
+          return () => window.removeEventListener("resize", handleResize);
+        }, []); 
+
+        return windowSize;
+      }
+  if(size.width>size.height && size.height<450){
+    return(
+      <div>ohhhhnnnooooo</div>
+    )
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          {size.width}px / {size.height}px
+        
+          <Game width={size.width>700? 600 : 350} />
+          
+         
       </header>
     </div>
   );
