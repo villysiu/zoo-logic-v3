@@ -1,36 +1,31 @@
 const games=[
     {
         id: 1,
-        header: [[{animalId:2, count:1}, {animalId:3, count:1}, {animalId:1, count:1}],
-                 [{animalId:2, count:1}, {animalId:3, count:1}, {animalId:1, count:1}]],
+        header: [[[2,1],[3,1],[1,1]],[[2,1],[3,1],[1,1]]],
         board: [[0,0,0],[0,0,0],[0,0,0]],
         fixed: [],
     },
     {
         id: 2,
-        header: [[{animalId:2, count:1}, {animalId:3, count:1}, {animalId:1, count:1}],
-                 [{animalId:2, count:2}, {animalId:1, count:2}, {animalId:3, count:3}]],
+        header: [[[2,1],[3,1],[1,1]],[[2,2],[1,2],[3,3]]],
         board: [[0,0,0],[0,0,0],[0,0,0]],
         fixed: [],
     },
     {
         id: 3,
-        header: [[{animalId:2, count:1}, {animalId:3, count:1}, {animalId:1, count:1}],
-                 [{animalId:3, count:2}, {animalId:0, count:0}, {animalId:1, count:1}]],
+        header: [[[2,1],[3,1],[1,1]],[[3,2],[0,0],[1,1]]],
         board: [[0,0,0],[0,1,0],[0,0,0]],
         fixed: [4],
     },
     {
         id: 4,
-        header: [[{animalId:2, count:1}, {animalId:3, count:1}, {animalId:1, count:1}],
-                [{animalId:3, count:2}, {animalId:1, count:2},{animalId:2, count:1}]],
+        header: [[[2,1],[3,1],[1,1]],[[3,2],[1,2],[2,1]]],
         board: [[0,0,0],[0,0,0],[0,0,0]],
         fixed: [],
     },
     {
         id: 5,
-        header: [[{animalId:3, count:2}, {animalId:2, count:2}, {animalId:1, count:1}],
-                 [{animalId:2, count:1}, {animalId:0, count:0},{animalId:1, count:1}]],
+        header: [[3,2],[2,2],[1,1], [[2,1],[0,0],[1,1]]],
         board: [[0,0,0],[3,0,0],[0,0,0]],
         fixed: [3],
     },
@@ -214,4 +209,8 @@ const games=[
 
 export const gameCount=()=>(games.length)
 
-export const getGame=(num)=>(games.find(game =>game.id === num))
+// export const getGame=(num)=>(games.find(game =>game.id === num))
+export const getGame=(num)=>{
+    console.log("new game "+ num)
+    return games.find(game =>game.id === num)
+}

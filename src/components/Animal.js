@@ -3,6 +3,7 @@ import zebra from '../images/zebra.png'
 import hippo from '../images/hippo.png'
 
 const Animal = ({animalId}) => {
+    
     if(animalId===0) return null;
 
     const getAnimal = (animalId) =>{

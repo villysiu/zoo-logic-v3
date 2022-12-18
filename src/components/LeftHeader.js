@@ -4,9 +4,9 @@ const LeftHeader = ({arr}) => {
     return (
         <table height="100%" width="100%"><tbody>
             { arr.map((item, idx)=> 
-                <tr><td className='square h' key={idx}>
-                    {item.count}
-                    <Animal animalId={item.animalId} />
+                <tr key={idx}><td className='square h' >
+                    {item[1] > 0 ? item[1] : null}
+                    <Animal animalId={item[0]} />
                 </td></tr>) 
             }
         </tbody></table>
