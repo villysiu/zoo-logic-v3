@@ -1,12 +1,15 @@
-import Animal from "./Animal";
-const LeftHeader = ({arr}) => {
 
+import HeaderSquare from './HeaderSquare'
+const LeftHeader = ({arr}) => {
+    
     return (
         <table height="100%" width="100%"><tbody>
             { arr.map((item, idx)=> 
-                <tr key={idx}><td className='square h' >
-                    {item[1] > 0 ? item[1] : null}
-                    <Animal animalId={item[0]} />
+                <tr key={idx}>
+                    <td className='square h' >
+                    
+                    <HeaderSquare animalId={item[0]} count={item[1]} />
+                    
                 </td></tr>) 
             }
         </tbody></table>

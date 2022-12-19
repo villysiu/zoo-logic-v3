@@ -43,20 +43,31 @@
 }
 .game-top-header {
   width: 75%;
-  background-color: aqua;
+  background-color: rgba(142, 237, 142, 0.523);
   border: 1px solid black;
 }
 .game-left-header {
   width: 25%;
-  background-color: aqua;
+  background-color: rgba(142, 237, 142, 0.523);
   border: 1px solid black;
 }
 .square {
   border: 1px solid black;
 }
 .w {
-  width: 33.33%;
+  width: 33.33333%;
 }
 .h {
   height: 33.33333%;
+}
+.font-face-cg {
+  font-family: "CG";
+ }
+ .rounded {
+  border: 1px solid black;
+  padding: 5px;
+  
+ }
+ .dropdown-toggle::after {
+  display: none !important; 
 }
