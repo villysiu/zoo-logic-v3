@@ -1,7 +1,6 @@
 import { Container, Navbar, NavDropdown } from 'react-bootstrap';
 import About from './About';
 import { useState } from 'react';
-import hippo from '../images/hippo.png'
 import { List } from 'react-bootstrap-icons';
 // bi bi-list
 const Header = () => {

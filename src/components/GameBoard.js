@@ -47,7 +47,7 @@ const GameBoard = ({width, level, setLevel }) => {
             <Row>
                 <Col lg="1"></Col>
                 <Col>
-                    
+                {" "}
                     <table width={width} height={width} className="gameboard" border="1px">
                         <tbody>
                         <tr height='25%' border="1">

@@ -6,7 +6,7 @@ import { getLevel } from './components/functions'
 import GameBoard from './components/GameBoard';
 import Header from './components/Header'
 import background from "./images/forest_bg.png";
-import About from "./components/About"
+
 function App() {
   console.log("in app")
   const size = useWindowSize();
@@ -27,6 +27,7 @@ function App() {
           {/* {size.width}px / {size.height}px / level {level} */}
         
           <Header />
+         
           <GameBoard width={size.width>700? 600 : 350} level={level} setLevel={setLevel} />
           
       </header>
