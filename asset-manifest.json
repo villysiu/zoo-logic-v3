@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/zoo-logic-v3/static/css/main.6c2e000e.css",
-    "main.js": "/zoo-logic-v3/static/js/main.7e05445f.js",
+    "main.css": "/zoo-logic-v3/static/css/main.531e2a5c.css",
+    "main.js": "/zoo-logic-v3/static/js/main.f906165d.js",
     "static/js/787.6caa6aa3.chunk.js": "/zoo-logic-v3/static/js/787.6caa6aa3.chunk.js",
     "static/media/lion.png": "/zoo-logic-v3/static/media/lion.40d0f554eee0936f6947.png",
+    "static/media/forest_bg.png": "/zoo-logic-v3/static/media/forest_bg.4134c68df9d278b64232.png",
     "static/media/hippo.png": "/zoo-logic-v3/static/media/hippo.a53e4723e1e2152a7b57.png",
     "static/media/zebra.png": "/zoo-logic-v3/static/media/zebra.263eb4c0d7b9ff2bd9d5.png",
     "index.html": "/zoo-logic-v3/index.html",
-    "main.6c2e000e.css.map": "/zoo-logic-v3/static/css/main.6c2e000e.css.map",
-    "main.7e05445f.js.map": "/zoo-logic-v3/static/js/main.7e05445f.js.map",
+    "main.531e2a5c.css.map": "/zoo-logic-v3/static/css/main.531e2a5c.css.map",
+    "main.f906165d.js.map": "/zoo-logic-v3/static/js/main.f906165d.js.map",
     "787.6caa6aa3.chunk.js.map": "/zoo-logic-v3/static/js/787.6caa6aa3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6c2e000e.css",
-    "static/js/main.7e05445f.js"
+    "static/css/main.531e2a5c.css",
+    "static/js/main.f906165d.js"
   ]
 }
