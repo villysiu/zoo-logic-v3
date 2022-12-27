@@ -27,17 +27,7 @@ export const useWindowSize = () => {
     return windowSize;
   }
 
-// export const useLevel = () => {
-//     const [level, setLevel] = useState(1)
-//     useEffect(() =>{
-//         if(!localStorage.getItem('level')){
-//             localStorage.setItem('level', 1)
-//         }else{
-//             setLevel(parseInt(localStorage.getItem('level')))
-//         }
-//     },[])
-//     return level;
-//   }
+
 
 export const getLevel = () => {
     if(!localStorage.getItem('level')){
@@ -49,44 +39,39 @@ export const getLevel = () => {
 }
 
   export const countTokens = arr =>{
-    let map = new Map([[1, 3], [2, 3], [3, 3]])
-    for(let row of arr){
-        for(let item of row) {
-            if(item===0) continue;
-            let count=map.get(item)
-            map.set(item, count-1)
+    let count = [9, 3, 3, 3]
+    for(let r=0;r<arr.length;r++){
+        for(let c=0;c<arr[0].length;c++) {
+
+            let idx=arr[r][c]
+            count[idx]-=1
         }
     }
-    return Array.from(map)
+    return count;
 }
 
 // [[[2,1],[3,1],[1,1]],[[3,2],[0,0],[1,1]]],
 export const checkBoard = (arr, headers) =>{
-    
-    headers=headers.flat()
-
-    const grid=[
-        [arr[0][0], arr[1][0],arr[2][0]],
-        [arr[0][1], arr[1][1],arr[2][1]],
-        [arr[0][2], arr[1][2],arr[2][2]],
-        [arr[0][0], arr[0][1],arr[0][2]],
-        [arr[1][0], arr[1][1],arr[1][2]],
-        [arr[2][0], arr[2][1],arr[2][2]]
-    ]
-     
-    for(let i=0;i<6;i++){
-        
-        if(headers[i][0]===0) continue;
-
+    for(let c=0;c<3;c++){
+        if(headers[0][c][0]===0) continue;
         let count=0
-       
-        for(let num of grid[i]){
-            if(num===0) return false;
-            if(num===headers[i][0]) count++;
-        }
-        if(count!==headers[i][1]) 
-            return false;
-    }
         
-    return true;
+        for(let r=0;r<3;r++){
+        
+            if(arr[r][c]===headers[0][c][0])
+            count++
+        }
+        if(count!==headers[0][c][1])
+            return false
+    }
+    for(let r=0;r<3;r++){
+        if(headers[0][r][0]===0) continue;
+        let count=0
+        for(let c=0;c<3;c++){
+            if(arr[r][c]===headers[1][r][0])
+                count++
+        }
+        if(count!==headers[1][r][1]) return false
+    }
+    return true
 }

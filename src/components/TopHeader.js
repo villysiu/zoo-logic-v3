@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import HeaderSquare from './HeaderSquare'
-const TopHeader = ({arr}) => {
-    
+const TopHeader = memo(({arr}) => {
+    console.log("top header")
     return (
         <table height="100%" width="100%"><tbody><tr>
             { arr.map((item, idx)=> 
@@ -12,5 +13,5 @@ const TopHeader = ({arr}) => {
         </table>
         
     )
-}
+})
 export default TopHeader;

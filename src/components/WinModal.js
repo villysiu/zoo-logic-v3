@@ -1,10 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-const WinModal = ({show, setShow}) => {
-  console.log(show)
+const WinModal = ({show, setShow, msg, setLastGame}) => {
+
+  // console.log(lastGame)
   
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    setLastGame(false)
+  }
 //   const handleShow = () => setShow(true);
 
   return (
@@ -13,10 +17,10 @@ const WinModal = ({show, setShow}) => {
         <Modal.Header closeButton>
           <Modal.Title>You won!</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Next level</Modal.Body>
+        <Modal.Body>{msg}</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Next ->
+            Close
           </Button>
         </Modal.Footer>
       </Modal>

@@ -1,20 +1,26 @@
-
+import Animal from "./Animal"
 import Token from "./Token"
-const GameGrid = ({arr, setGameBoard, tokenLeft}) =>{
+import { memo } from "react"
+
+const GameGrid =memo( ({arr, setGameBoard, setTokenCount, fixed}) =>{
+    console.log("gamegrid")
+
     
     return(
         <table width='100%' height='100%'>
             <tbody>
-                {arr.map((row, rid)=>(
+                {arr.map((rows, rid)=>(
                     <tr className='square h' key={rid}>
                        
-                        {row.map((col, cid)=>(
-                            <Token key={cid} animalId={col} coordinate={[rid, cid]} setGameBoard={setGameBoard} tokenLeft={tokenLeft}/>
+                        {rows.map((val, cid)=>(
+                            fixed.has(JSON.stringify([rid,cid])) ? 
+                            <td key={cid} className='square w' > <Animal animalId={val} /> </td> :
+                            <Token key={cid} animalId={val} rid={rid} cid={cid} setGameBoard={setGameBoard} setTokenCount={setTokenCount} />
                         ))}
                     </tr>
                 ))}
             </tbody>    
         </table>
     )
-}
+})
 export default GameGrid

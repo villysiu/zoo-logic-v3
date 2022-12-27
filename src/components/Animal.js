@@ -1,9 +1,10 @@
 import lion from '../images/lion.png'
 import zebra from '../images/zebra.png'
 import hippo from '../images/hippo.png'
-
+import { memo } from 'react'
 const Animal = ({animalId}) => {
-    
+    console.log("Animal")
+  
     if(animalId===0) return null;
 
     const getAnimal = (animalId) =>{
@@ -25,4 +26,4 @@ const Animal = ({animalId}) => {
         <img src={url} width='50%' height='50%' alt={animal}></img>
     )
 }
-export default Animal;
+export default memo(Animal);

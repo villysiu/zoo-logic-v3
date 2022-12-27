@@ -1,15 +1,16 @@
+import { gameCount } from '../data/games';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
-    import Button from 'react-bootstrap/Button';
-    import Modal from 'react-bootstrap/Modal';
-    
-    const About = ({show, setShow}) => {
-    //   console.log(show)
+const About = ({show, setShow}) => {
+   
+    let count=gameCount()
     const Content =() =>{
         return (
             <div style={{margin: '35px'}}>
                 <div>
                     Using the principle of Sudoku, place the animal tokesns onto corresponding 
-                    positions on the board. The game contains 30 games. It is suitable for
+                    positions on the board. The game contains {count} games. It is suitable for
                     players age 3 and above. The game can develop children's logicical
                     thinking and improve their concentration and patience. 
                 </div>

@@ -1,15 +1,15 @@
+import { memo } from 'react';
 import { Container, Navbar, NavDropdown } from 'react-bootstrap';
-import About from './About';
-import { useState } from 'react';
-import { List } from 'react-bootstrap-icons';
-// bi bi-list
-const Header = () => {
-    const [about, setAbout]=useState(false) 
 
+import { List } from 'react-bootstrap-icons';
+
+const Header = ({setAbout}) => {
+    
+console.log("header bar")
     return (
         <>
-        {about && <About show={about} setShow={setAbout} />}
-        <Navbar collapseOnSelect bg="light" expand='xs' fixed="top"  >
+        
+        <Navbar collapseOnSelect  expand='xs' fixed="top" >
         <Container>
 
             <Navbar.Brand className="font-face-cg" style={{color: 'green', fontSize:'30px', padding:'0px'}} >
@@ -35,4 +35,4 @@ const Header = () => {
     )
     
 }
-export default Header
+export default memo(Header);
