@@ -12,6 +12,7 @@ import TokenCount from './TokenCount';
 import WinModal from './WinModal'
 import { getGame, gameCount } from "../data/games.js";
 import { countTokens, checkBoard } from "./functions";
+
 const GameBoard = ({width, level, setLevel }) => {
     console.log("gameboard")
     let [loading, setLoading] = useState(true)
@@ -32,6 +33,8 @@ const GameBoard = ({width, level, setLevel }) => {
                 setGameBoard(g.board)
                 setTokenCount(countTokens(g.board))
                 setLoading(false)
+                
+                // setShowModal(false)
             }catch(error){
                 console.log("error loading!!")
             }
@@ -43,6 +46,7 @@ const GameBoard = ({width, level, setLevel }) => {
     useEffect(()=>{ 
         // console.log("check win effect")
         if(game!==null && tokenCount[0]===9 && checkBoard(gameboard, game.header)){
+            console.log(lastGame)
             setShowModal(true)
             setLastGame(game.id===count)
             setLevel(game.id===count ? 1 : game.id+1)
@@ -91,7 +95,7 @@ const GameBoard = ({width, level, setLevel }) => {
                     
                     <TokenCount tokenCount={tokenCount} width={width}  />
                 </Col>
-                <Col lg="2"></Col>
+                <Col lg="1"></Col>
                 
             </Row>
             

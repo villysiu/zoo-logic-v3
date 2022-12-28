@@ -25,12 +25,9 @@ function App() {
     )
   }
 
-
-
-
   return (
     <div className="App" style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover',}}>
-      {about && <About show={about} setShow={setAbout} />}
+      {about && <About show={about} setShow={setAbout} diaglog={ size.width>900 ? "modal-50w" : "modal-90w" } />}
       <header className="App-header">
          
       <Header setAbout={setAbout} />

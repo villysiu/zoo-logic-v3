@@ -1,13 +1,20 @@
 import { gameCount } from '../data/games';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import zl1 from "../images/ZL_instructions.gif";
+import zl2 from "../images/ZL_gameflow.gif"
+import zl3 from "../images/ZL_win.gif"
 
-const About = ({show, setShow}) => {
+
+import hippo from "../images/hippo.png"
+import lion from "../images/lion.png"
+import zebra from "../images/zebra.png"
+const About = ({show, setShow, diaglog}) => {
    
     let count=gameCount()
     const Content =() =>{
         return (
-            <div style={{margin: '35px'}}>
+            <div style={{margin: '30px'}}>
                 <div>
                     Using the principle of Sudoku, place the animal tokesns onto corresponding 
                     positions on the board. The game contains {count} games. It is suitable for
@@ -18,11 +25,25 @@ const About = ({show, setShow}) => {
                 <div>
                 <b>Instruction: </b><br/>
     
-                    On the board, the top row and left column indicates the number of said animal in the colum and row.
-                    Player click in the board for the animal they wanted to place on board.
-                    When the number of animals matches the top row and left column requirement, the player won, and moved to 
-                    next level.
-    
+                    The game board is a 3x3 grid. To the top and left of the gird are the indicators of the number of animal in corresponding column and row.
+                    Player clicks on the board to change animal from "blank" 
+                    to "Hippo"<img src={hippo} alt="hippo" width="20px" />, 
+                    to "Lion" <img src={lion} alt="lion" width="20px" />, 
+                    to "Zebra" <img src={zebra} alt="zebra" width="20px" />.
+                    When the number of animals matches all the requirement, the player won, and level up.
+                    <br/>
+                  <img src={zl1} alt="instruction" width="100%"></img>
+                </div>
+                <br/>
+                <div>
+                  <b>Game flow: </b><br/>
+                  <img src={zl2} alt="game flow" width="60%"></img>
+                </div>
+                <br/>
+                <div>
+                  In the game, the columns and rows in the grid all satisfied the requirement.
+                  <br/>
+                  <img src={zl3} alt="winning" width="60%"></img>
                 </div>
             </div>
         )
@@ -31,7 +52,7 @@ const About = ({show, setShow}) => {
     
       return (
         <>
-          <Modal show={show} onHide={handleClose}>
+          <Modal show={show} onHide={handleClose} dialogClassName={diaglog}>
             <Modal.Header closeButton>
               <Modal.Title>About Zoo Logic</Modal.Title>
             </Modal.Header>

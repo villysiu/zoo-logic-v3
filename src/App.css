@@ -71,3 +71,13 @@
  .dropdown-toggle::after {
   display: none !important; 
 }
+.modal-90w{
+  /* width: 30%; */
+  
+  max-width: 80% !important;
+} 
+.modal-50w{
+  /* width: 30%; */
+  
+  max-width: 50% !important;
+} 
