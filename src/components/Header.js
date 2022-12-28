@@ -16,19 +16,12 @@ console.log("header bar")
                 Zoo Logic
             </Navbar.Brand>
             <NavDropdown
-                    title=<List className='rounded' size={50}  />
-                    id={`offcanvasNavbarDropdown-expand-false`}
-                    align="end"
-                  >
-                    <NavDropdown.Item onClick={()=>setAbout(true)}>About the Game</NavDropdown.Item>
-                    {/* <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
-                    </NavDropdown.Item> */}
-                  </NavDropdown>
+              title=<List className='rounded' size={50}  />
+              id={`offcanvasNavbarDropdown-expand-false`}
+              align="end"
+            >
+              <NavDropdown.Item onClick={()=>setAbout(true)}>About the Game</NavDropdown.Item>
+            </NavDropdown>
       </Container>
    </Navbar>
    </>

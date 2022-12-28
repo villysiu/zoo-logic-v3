@@ -23,7 +23,7 @@ const Animal = ({animalId}) => {
     const {animal, url} = getAnimal(animalId);
 
     return (
-        <img src={url} width='50%' height='50%' alt={animal}></img>
+        <img src={url} width='50%' alt={animal}></img>
     )
 }
 export default memo(Animal);

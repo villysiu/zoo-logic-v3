@@ -8,7 +8,7 @@ const TokenCount = memo(({tokenCount, width}) => {
                 {
                     tokenCount.map((count, idx) => (
                      idx>0 &&   
-                    <td key={idx} width={width/3}>
+                    <td key={idx} width="33.3333%">
                         <Animal animalId={idx} />
                        {' '}: {count}</td>
          

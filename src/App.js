@@ -6,15 +6,25 @@ import { getLevel } from './components/functions'
 import GameBoard from './components/GameBoard';
 import Header from './components/Header'
 import About from './components/About';
+import Contact from './components/Contact';
 import background from "./images/forest_bg.png";
 import rotate from "./images/rotate.png"
+import sadscreen from "./images/sadscreen.png"
 function App() {
   console.log("in app")
   const size = useWindowSize();
   
   const [level, setLevel] = useState(getLevel());  
   const [about, setAbout]=useState(true) 
-  
+ console.log(size.width, size.height)
+  if(size.height>size.width && size.width<375){
+    return(
+      <div className="App" >
+        <img src={sadscreen} width="300" alt="sadscreen" ></img>
+        <p>Sorry the device does not support the game. </p>
+      </div>
+    )
+  }
     
   if(size.width>size.height && size.height<450){
     return(
@@ -30,9 +40,9 @@ function App() {
       {about && <About show={about} setShow={setAbout} diaglog={ size.width>900 ? "modal-50w" : "modal-90w" } />}
       <header className="App-header">
          
-      <Header setAbout={setAbout} />
+          <Header setAbout={setAbout} />
           <GameBoard width={(size.width>700 && size.height>800)? 600 : 350} level={level} setLevel={setLevel} />
-          
+          <Contact />
       </header>
     </div>
   );
