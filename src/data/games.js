@@ -156,10 +156,9 @@ const games=[
 
 export const gameCount=()=>(games.length)
 
-// export const getGame=(num)=>(games.find(game =>game.id === num))
 export const getGame=(num)=>{
-    console.log("new game "+ num)
-    // let game=games.find(game =>game.id === num)
+    // console.log("new game "+ num)
+
     let game=games[num-1]
     game.fixed=new Set()
     for(let r=0;r<game.board.length;r++){

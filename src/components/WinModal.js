@@ -7,7 +7,6 @@ const WinModal = ({show, setShow, msg, setLastGame }) => {
     setShow(false);
     setLastGame(false)    
   }
-//   const handleShow = () => setShow(true);
 
   return (
     <>

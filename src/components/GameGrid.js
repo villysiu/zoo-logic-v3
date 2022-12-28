@@ -3,7 +3,7 @@ import Token from "./Token"
 import { memo } from "react"
 
 const GameGrid =memo( ({arr, setGameBoard, setTokenCount, fixed}) =>{
-    console.log("gamegrid")
+    // console.log("gamegrid")
 
     
     return(

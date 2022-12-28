@@ -5,7 +5,7 @@ import { List } from 'react-bootstrap-icons';
 
 const Header = ({setAbout}) => {
     
-console.log("header bar")
+// console.log("header bar")
     return (
         <>
         

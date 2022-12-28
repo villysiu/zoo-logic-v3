@@ -16,21 +16,22 @@ function App() {
   
   const [level, setLevel] = useState(getLevel());  
   const [about, setAbout]=useState(true) 
- console.log(size.width, size.height)
+
+  // Display width is too narrow
   if(size.height>size.width && size.width<375){
     return(
       <div className="App" >
         <img src={sadscreen} width="300" alt="sadscreen" ></img>
-        <p>Sorry the device does not support the game. </p>
+        <p>Oh no! We can't fit everything on your screen. </p>
       </div>
     )
   }
-    
+  // Display height is too short
   if(size.width>size.height && size.height<450){
     return(
       <div className="App" >
         <img src={rotate} width="300" alt="rotate" ></img>
-        <p>Oh no! We cant fit everything on your screen. Please rotate your device.</p>
+        <p>Oh no! We can't fit everything on your screen. Please rotate your device.</p>
       </div>
     )
   }

@@ -1,7 +1,7 @@
 import Animal from "./Animal"
 import { memo } from "react"
 const TokenCount = memo(({tokenCount, width}) => {  
-    console.log(tokenCount)
+    // console.log(tokenCount)
     return(
         <table width={width*0.7} height={width*0.7/3} className="gameboard" ><tbody>
             <tr>

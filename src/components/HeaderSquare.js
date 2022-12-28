@@ -1,6 +1,6 @@
 import Animal from "./Animal";
 const HeaderSquare = ({animalId, count}) =>{
-    console.log("header square")
+    // console.log("header square")
     const Count = ({num}) =>{
         const str=" : "+num
         return str

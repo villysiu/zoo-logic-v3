@@ -14,7 +14,7 @@ import { getGame, gameCount } from "../data/games.js";
 import { countTokens, checkBoard } from "./functions";
 
 const GameBoard = ({width, level, setLevel }) => {
-    console.log("gameboard")
+    // console.log("gameboard")
     let [loading, setLoading] = useState(true)
     let [game, setGame] = useState(null)
     let [gameboard, setGameBoard] = useState(null)

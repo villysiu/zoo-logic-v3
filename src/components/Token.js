@@ -1,10 +1,9 @@
 import { memo, useCallback } from "react"
 import Animal from "./Animal"
 const Test = memo(({animalId, rid, cid, setGameBoard, setTokenCount}) =>{
-    console.log("test")
+    // console.log("Token")
 
     const handleClick=useCallback((rid, cid, animalId)=>{
-        console.log("Token")
         let prevId=animalId
         setTokenCount(prev=>{
             
