@@ -11,7 +11,7 @@ import background from "./images/forest_bg.png";
 import rotate from "./images/rotate.png"
 import sadscreen from "./images/sadscreen.png"
 function App() {
-  console.log("in app")
+  // console.log("in app")
   const size = useWindowSize();
   
   const [level, setLevel] = useState(getLevel());  
