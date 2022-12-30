@@ -27,7 +27,7 @@ const Test = memo(({animalId, rid, cid, setGameBoard, setTokenCount}) =>{
             arr[rid][cid] = prevId
             return arr
         })
-    }, [])
+    }, [setTokenCount,setGameBoard])
    
     return(
         <td key={cid} className='square' onClick={()=>handleClick(rid, cid, animalId)}> <Animal animalId={animalId} /> </td>
