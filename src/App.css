@@ -1,10 +1,5 @@
 .App {
   text-align: center;
-  /* background-image: url(./images/forest_bg.png);
-  background-size: cover; */
-  /* background-repeat: no-repeat; */
-  /* background-position: center center;
-  background-attachment: fixed; */
 }
 
 .gameboard {
@@ -35,24 +30,6 @@
     padding: 2px;
   }
 }
-/* @media (max-height: 450px) {
-  
-  .App {
-    background-image: url(./images/rotate.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    
-  }
-  .App-header {
-    visibility: collapse;
-  }
-} */
-
-/* .narrow {
-  visibility:  hidden;
-} */
-
 
 .App-logo {
   height: 40vmin;
@@ -104,12 +81,8 @@
 }
 .square {
   border: 1px solid black;
-}
-.w {
-  width: 33.33333%;
-}
-.h {
-  height: 33.33333%;
+  width: calc(100%/3);
+  height: calc(100%/3);
 }
 .font-face-cg {
   font-family: "CG";
@@ -122,16 +95,7 @@
  .dropdown-toggle::after {
   display: none !important; 
 }
-/* .modal-90w{
-  /* width: 30%; */
-  
-  /* max-width: 80% !important;
-}  */
-/* .modal-50w{ */
-  /* width: 30%; */
-  
-  /* max-width: 50% !important; */
-/* }  */
+
 .dialog { 
   max-width: 50% !important;
 }
@@ -142,4 +106,7 @@
 }
 .contact{
   font-size: 15px;
+}
+.nav {
+  height: 100px;
 }
