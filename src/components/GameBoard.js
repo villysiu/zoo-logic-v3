@@ -1,7 +1,4 @@
 import { useEffect, useState, memo } from "react"
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 
@@ -46,7 +43,6 @@ const GameBoard = ({width, level, setLevel }) => {
     useEffect(()=>{ 
         // console.log("check win effect")
         if(game!==null && tokenCount[0]===9 && checkBoard(gameboard, game.header)){
-            console.log(lastGame)
             setShowModal(true)
             setLastGame(game.id===count)
             setLevel(game.id===count ? 1 : game.id+1)
@@ -66,11 +62,8 @@ const GameBoard = ({width, level, setLevel }) => {
     return (
         <>
         {showModal && <WinModal show={showModal} setShow={setShowModal} msg={lastGame ? "Back to game 1" :  "Next level"} setLastGame={setLastGame} /> }
-        <Container>
-            <Row>
-                <Col lg="1"></Col>
-                <Col>
-                    <table width={width} height={width} className="gameboard" border="1px">
+                    {/* <table width={width} height={width} className="gameboard" border="1px"> */}
+                    <table className="gameboard">
                         <tbody>
                         <tr height='25%' border="1">
                             <td width='25%'>Level {game.id}<br/>
@@ -94,12 +87,7 @@ const GameBoard = ({width, level, setLevel }) => {
                     </table>
                     
                     <TokenCount tokenCount={tokenCount} width={width}  />
-                </Col>
-                <Col lg="1"></Col>
-                
-            </Row>
-            
-        </Container>
+   
         </>
        
     )

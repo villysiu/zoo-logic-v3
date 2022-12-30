@@ -5,8 +5,34 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
+  background-image: url(./images/forest_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+
+  height: 100%; overflow: hidden
+}
+@media (max-height: 450px) {
+  body {
+    background-image: url(./images/rotate.png);  
+    background-size: 60%
+  }
+  .App {
+    visibility: collapse;
+  }
+}
+@media (max-width: 350px) {
+  body {
+    background-image: url(./images/sadscreen.png); 
+    background-size: 90%;
+    background-position: top center;
+  }
+  .App {
+    visibility: collapse;
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

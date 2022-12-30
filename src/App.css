@@ -1,6 +1,58 @@
 .App {
   text-align: center;
+  /* background-image: url(./images/forest_bg.png);
+  background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* background-position: center center;
+  background-attachment: fixed; */
 }
+
+.gameboard {
+  width: 350px;
+  height:350px;
+  border: 1px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.count {
+  width: calc(350px*0.7);
+  height: calc(350px*0.7/3);
+  padding: 1px;
+  margin-left: auto;
+  margin-right: auto;    
+}
+
+@media (min-width: 650px) and (min-height: 651px){
+  .gameboard {
+    width: 600px;
+    height: 600px;
+    border: 1px
+  }
+  .count {
+    width: calc(600px*0.7);
+    height: calc(600px*0.7/3);
+    padding: 2px;
+  }
+}
+/* @media (max-height: 450px) {
+  
+  .App {
+    background-image: url(./images/rotate.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+  }
+  .App-header {
+    visibility: collapse;
+  }
+} */
+
+/* .narrow {
+  visibility:  hidden;
+} */
+
 
 .App-logo {
   height: 40vmin;
@@ -36,10 +88,9 @@
     transform: rotate(360deg);
   }
 }
-
-.gameboard {
-  margin-left: auto;
-  margin-right: auto;
+.center {
+  text-align: center;
+  padding: 30px;
 }
 .game-top-header {
   width: 75%;
