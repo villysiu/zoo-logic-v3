@@ -10,7 +10,7 @@ const LeftHeader = memo(({arr}) => {
             <table height="100%" width="100%"><tbody>
                 { arr.map((item, idx)=> 
                     <tr key={idx}>
-                        <td className='square h' >
+                        <td className='square' >
                         
                         <HeaderSquare animalId={item[0]} count={item[1]} />
                         

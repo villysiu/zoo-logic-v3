@@ -30,7 +30,7 @@ const Test = memo(({animalId, rid, cid, setGameBoard, setTokenCount}) =>{
     }, [])
    
     return(
-        <td key={cid} className='square w' onClick={()=>handleClick(rid, cid, animalId)}> <Animal animalId={animalId} /> </td>
+        <td key={cid} className='square' onClick={()=>handleClick(rid, cid, animalId)}> <Animal animalId={animalId} /> </td>
     )
 })
 export default Test

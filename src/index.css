@@ -12,7 +12,7 @@ body {
   background-position: center center;
   background-attachment: fixed;
 
-  height: 100%; overflow: hidden
+  /* height: 100%; overflow: hidden */
 }
 @media (max-height: 450px) {
   body {

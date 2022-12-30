@@ -3,13 +3,13 @@ import { Container, Navbar, NavDropdown } from 'react-bootstrap';
 
 import { List } from 'react-bootstrap-icons';
 
-const Header = ({setAbout}) => {
+const Navheader = ({setAbout}) => {
     
 // console.log("header bar")
     return (
-        <>
         
-        <Navbar collapseOnSelect  fixed="top" >
+        <div className="nav">
+        <Navbar collapseOnSelect fixed="top" >
         <Container>
 
             <Navbar.Brand className="font-face-cg" style={{color: 'green', fontSize:'30px', padding:'0px'}} >
@@ -24,8 +24,8 @@ const Header = ({setAbout}) => {
             </NavDropdown>
       </Container>
    </Navbar>
-   </>
+   </div>
     )
     
 }
-export default memo(Header);
+export default memo(Navheader);
