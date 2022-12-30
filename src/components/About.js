@@ -44,7 +44,8 @@ const About = ({show, setShow, diaglog}) => {
     
       return (
         <>
-          <Modal show={show} onHide={handleClose} dialogClassName={diaglog}>
+          {/* <Modal show={show} onHide={handleClose} dialogClassName={diaglog}> */}
+          <Modal show={show} onHide={handleClose} dialogClassName="dialog" >
             <Modal.Header closeButton>
               <Modal.Title>About Zoo Logic</Modal.Title>
             </Modal.Header>
