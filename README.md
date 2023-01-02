@@ -1,7 +1,8 @@
 # Zoo logic
 An independently developed logic game for kids (Age 3+). Players place the animals on the board to satisfy the requirement. There are 30 levels.
 
-![demo](https://villysiu.github.io/zoo-logic-v3/static/media/ZL_gameflow.a3798e2f4513666a7a67.gif | width=100)
+<!-- ![demo](https://villysiu.github.io/zoo-logic-v3/static/media/ZL_gameflow.a3798e2f4513666a7a67.gif | width=100) -->
+<img src="https://villysiu.github.io/zoo-logic-v3/static/media/ZL_gameflow.a3798e2f4513666a7a67.gif" width="100">
 
 ## Tech Stack
 JavaScript, ReactJS, HTML and CSS.
