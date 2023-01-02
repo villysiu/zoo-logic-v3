@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/zoo-logic-v3/static/css/main.74d53c2f.css",
-    "main.js": "/zoo-logic-v3/static/js/main.f4118318.js",
+    "main.js": "/zoo-logic-v3/static/js/main.7b6f7322.js",
     "static/js/787.6caa6aa3.chunk.js": "/zoo-logic-v3/static/js/787.6caa6aa3.chunk.js",
     "static/media/ZL_gameflow.gif": "/zoo-logic-v3/static/media/ZL_gameflow.a3798e2f4513666a7a67.gif",
     "static/media/ZL_win.gif": "/zoo-logic-v3/static/media/ZL_win.8e68901a296f47881b0b.gif",
@@ -14,11 +14,11 @@
     "static/media/rotate.png": "/zoo-logic-v3/static/media/rotate.069c2312077b290461ec.png",
     "index.html": "/zoo-logic-v3/index.html",
     "main.74d53c2f.css.map": "/zoo-logic-v3/static/css/main.74d53c2f.css.map",
-    "main.f4118318.js.map": "/zoo-logic-v3/static/js/main.f4118318.js.map",
+    "main.7b6f7322.js.map": "/zoo-logic-v3/static/js/main.7b6f7322.js.map",
     "787.6caa6aa3.chunk.js.map": "/zoo-logic-v3/static/js/787.6caa6aa3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.74d53c2f.css",
-    "static/js/main.f4118318.js"
+    "static/js/main.7b6f7322.js"
   ]
 }
