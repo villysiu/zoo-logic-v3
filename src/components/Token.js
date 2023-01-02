@@ -1,4 +1,4 @@
-import {  useEffect, useState, memo } from "react"
+import { memo } from "react"
 
 import Animal from "./Animal"
 const Token = ({aid, rid, cid, handleClick}) =>{

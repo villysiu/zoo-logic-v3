@@ -1,4 +1,4 @@
-import { useEffect, useState, memo } from "react"
+import { useEffect, useState, memo, useCallback} from "react"
 import Button from 'react-bootstrap/Button';
 
 
@@ -21,7 +21,7 @@ const GameBoard = ({width, level, setLevel }) => {
     const [lastGame, setLastGame] = useState(false);
     let count=gameCount()
     useEffect(()=>{
-        // console.log("level effect??")
+       
         const helper=async (level)=>{
             try{ 
                 const g = await getGame(level)
@@ -57,7 +57,36 @@ const GameBoard = ({width, level, setLevel }) => {
         setGameBoard(game.board)
         setTokenCount(countTokens(game.board))
     }
-   
+    const handleClick=useCallback((rid, cid, aid)=>{
+        // console.log("clicked")
+        let updated=aid
+        setTokenCount(arr=>{
+            updated=aid
+            do{
+                updated=(updated+1)%4
+            }while((arr[updated]===0))
+
+            setGameBoard(arr=>{
+               
+                // console.log(updated)
+                return arr.map((row, r)=>{
+                    return row.map((val, c)=>{
+                        return r===rid && c===cid ? updated : val
+                    })
+    
+                })
+            })
+
+            return arr.map((count, idx)=>{
+                return idx===aid ? count+1 : ( idx===updated ? count-1 : count )
+
+            })
+        })
+
+        
+
+        
+    }, [])
     if(loading){
         return(<div>LOADING...</div>)
     }
@@ -83,7 +112,7 @@ const GameBoard = ({width, level, setLevel }) => {
                                 <LeftHeader arr={game.header[1]} />
                             </td>
                             <td>
-                                <GameGrid arr={gameboard} setGameBoard={setGameBoard} setTokenCount={setTokenCount} fixed={game.fixed} />
+                                <GameGrid arr={gameboard} handleClick={handleClick} fixed={game.fixed} />
                             </td>
                         </tr>
                         </tbody>
@@ -95,4 +124,4 @@ const GameBoard = ({width, level, setLevel }) => {
        
     )
 }
-export default GameBoard
+export default memo(GameBoard)

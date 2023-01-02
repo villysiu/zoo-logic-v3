@@ -3,8 +3,9 @@ import zebra from '../images/zebra.png'
 import hippo from '../images/hippo.png'
 import { memo } from 'react'
 const Animal = ({animalId}) => {
+    // console.log(animalId)
     if(animalId===0) return null;
-
+    
     const getAnimal = (animalId) =>{
         switch (animalId) {
             case 1:

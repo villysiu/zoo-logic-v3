@@ -3,8 +3,7 @@ import { Container, Navbar, NavDropdown } from 'react-bootstrap';
 
 import { List } from 'react-bootstrap-icons';
 
-const Navheader = ({setAbout}) => {
-    
+const Navheader = ({setAbout}) => {   
 // console.log("header bar")
     return (
         
