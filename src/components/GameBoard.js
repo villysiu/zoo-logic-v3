@@ -27,12 +27,13 @@ const GameBoard = ({width, level, setLevel }) => {
                 const g = await getGame(level)
                 if(!g) throw Error
                 setGame(g)
+                
                 setGameBoard(g.board)
                 setTokenCount(countTokens(g.board))
                 setLoading(false)
-                
-                // setShowModal(false)
+
             }catch(error){
+                
                 console.log("error loading!!")
             }
         }  
@@ -52,6 +53,7 @@ const GameBoard = ({width, level, setLevel }) => {
     }, [gameboard, game, setLevel, tokenCount, level, count])
     
     const handleReset = () =>{
+        // console.log(game.board)
         setGameBoard(game.board)
         setTokenCount(countTokens(game.board))
     }
@@ -59,6 +61,7 @@ const GameBoard = ({width, level, setLevel }) => {
     if(loading){
         return(<div>LOADING...</div>)
     }
+
     return (
         <>
         {showModal && <WinModal show={showModal} setShow={setShowModal} msg={lastGame ? "Back to game 1" :  "Next level"} setLastGame={setLastGame} /> }
@@ -86,10 +89,10 @@ const GameBoard = ({width, level, setLevel }) => {
                         </tbody>
                     </table>
                     
-                    <TokenCount tokenCount={tokenCount} width={width}  />
+                    <TokenCount tokenCount={tokenCount} />
    
         </>
        
     )
 }
-export default memo(GameBoard)
+export default GameBoard

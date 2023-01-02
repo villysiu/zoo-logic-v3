@@ -23,7 +23,7 @@ const About = ({show, setShow, diaglog}) => {
 
                     <p><b>Instruction: </b></p>
     
-                    <p>The game board is a 3x3 grid. To the top and left of the gird are the indicators of the number of animal in corresponding column and row.
+                    <p>The game board is a 3x3 grid. To the top and left of the gird are the number of animal in corresponding column and row.
                     Player clicks on the board to change animal from "blank" 
                     to "Hippo"<img src={hippo} alt="hippo" width="20px" />, 
                     to "Lion" <img src={lion} alt="lion" width="20px" />, 

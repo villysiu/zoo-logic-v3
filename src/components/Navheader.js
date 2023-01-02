@@ -9,7 +9,7 @@ const Navheader = ({setAbout}) => {
     return (
         
         <div className="nav">
-        <Navbar collapseOnSelect fixed="top" >
+        <Navbar collapseOnSelect fixed="top" bg="light">
         <Container>
 
             <Navbar.Brand className="font-face-cg" style={{color: 'green', fontSize:'30px', padding:'0px'}} >
