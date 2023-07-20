@@ -110,3 +110,18 @@
 .nav {
   height: 100px;
 }
+.techstack_wrapper {
+  display: flex;
+  justify-content: center;
+  
+}
+.techstack { 
+ width: 600px !important;
+ padding: 12px
+}
+@media all and (max-width: 600px) {
+  .techstack{
+    padding: 12px;
+    width: calc(100vw - 24px) !important
+  }
+}

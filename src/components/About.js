@@ -1,7 +1,7 @@
 import { gameCount } from '../data/games';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Contact from './Contact';
+import Footer from './Footer';
 import zl1 from "../images/ZL_instructions.gif";
 import zl2 from "../images/ZL_gameflow.gif"
 import zl3 from "../images/ZL_win.gif"
@@ -49,7 +49,10 @@ const About = ({show, setShow, diaglog}) => {
             <Modal.Header closeButton>
               <Modal.Title>About Zoo Logic</Modal.Title>
             </Modal.Header>
-            <Modal.Body><Content /><Contact/></Modal.Body>
+            <Modal.Body>
+              <Content />
+              <Footer/>
+            </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Close
