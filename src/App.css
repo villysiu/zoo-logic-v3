@@ -84,8 +84,18 @@
   width: calc(100%/3);
   height: calc(100%/3);
 }
-.font-face-cg {
-  font-family: "CG";
+.logo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.logo{
+  font-family: "Arial";
+  color: green;
+  font-size: 2rem;
+  padding: 0px
  }
  .rounded {
   border: 1px solid black;

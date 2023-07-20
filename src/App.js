@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import { getLevel } from './components/functions'
 import GameBoard from './components/GameBoard';
-import Navheader from './components/Navheader'
+import Header from './components/Header'
 import About from './components/About';
 import Footer from './components/Footer';
 
@@ -17,7 +17,8 @@ function App() {
     <div className="App">
       {about && <About show={about} setShow={setAbout} /> }
       
-          <Navheader setAbout={setAbout} />
+          {/* <Navheader setAbout={setAbout} /> */}
+          <Header setAbout={setAbout} />
           <GameBoard level={level} setLevel={setLevel} />
           <Footer />
 
