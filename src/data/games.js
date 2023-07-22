@@ -51,8 +51,7 @@ const games=[
     },
     {
         id: 11,
-        header: [{animalId:2, count:1}, {animalId:3, count:1}, {animalId:1, count:1},
-                {animalId:1, count:2}, {animalId:0, count:0},{animalId:3, count:2}],
+        header: [[[2, 1], [3, 1], [1, 1]],[[1, 2], [0, 0],[3, 2]]],
         board: [0,0,0,0,2,0,0,0,0],
     },
     {
@@ -102,8 +101,7 @@ const games=[
     },
     {
         id: 21,
-        header: [{animalId:3, count:1}, {animalId:2, count:2}, {animalId:0, count:0},
-                {animalId:2, count:1}, {animalId:3, count:1},{animalId:1, count:1}],
+        header: [[[3, 1], [2, 2], [0, 0]],[[2, 1], [3, 1],[1, 1]]],
         board: [0,0,1,0,0,0,0,0,0],
     },
     {
@@ -157,16 +155,9 @@ const games=[
 export const gameCount=()=>(games.length)
 
 export const getGame=(num)=>{
-    // console.log("new game "+ num)
+    console.log("new game "+ num)
 
-    let game=games[num-1]
-    game.fixed=new Set()
-    for(let r=0;r<game.board.length;r++){
-        for(let c=0;c<game.board[0].length;c++){
-            if(game.board[r][c]!==0)
-                game.fixed.add(JSON.stringify([r,c]))
-        }
-    }
-   
-    return game
+    let game=games.filter(g=>g.id===num)
+    
+    return game[0]
 }
