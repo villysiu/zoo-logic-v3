@@ -10,40 +10,49 @@ const Main = () => {
 
     console.log("main")
     
-    let [loading, setLoading] = useState(true)
-    const [showModal, setShowModal] = useState(false);
-    const [lastGame, setLastGame] = useState(false);
-
-    const initialState = {gameId: null, header: null, board: [], tokenLeft: [0,3,3,3]}
+    const [winModal, showWinModal] = useState(false);
+    const initialState = {loading: true, gameId: null, header: null, board: [], tokenLeft: [0,3,3,3]}
     const [state, dispatch] = useReducer(reducer, initialState);
-
-    let count=gameCount()
-    useEffect(()=>{
-        dispatch({type: 'SETGAME'})
-        setLoading(false)
-    }, [])
-    
-    const handleReset = () =>{
-        dispatch({type: 'SETGAME'})
-    }
 
     const handleClick=(row, col)=>{
         dispatch({type: 'CLICK', payload: {r: row, c:col }})
     }
-    if(loading){
+    const handleNextGame =()=>{
+        console.log("in going next game")
+        dispatch({type: 'NEXTGAME'})
+        showWinModal(false)
+    }
+    const handleReset = () =>{
+        dispatch({type: 'RESET'})
+    }
+    
+    useEffect(()=>{
+        console.log("load SETGAME")
+        if(state.loading)
+            dispatch({type: 'SETGAME'})
+    }, [state.loading])
+
+    useEffect(()=>{
+        console.log("check winning?")
+        if(state.tokenLeft[0]===9 && checkBoard(state.board, state.header)){
+            showWinModal(true)
+            
+        }
+    },[state.board, state.header, state.tokenLeft])
+    
+    if(state.loading){
+        console.log("loading ????????")
         return(<div>LOADING...</div>)
     }
 
     return (
         <>
-       
-            {/* {showModal && 
             <WinModal 
-                show={showModal} setShow={setShowModal} 
-                msg={lastGame ? "Back to game 1" :  "Next level"} 
-                setLastGame={setLastGame} 
-            /> } */}
-           <GameBoard gameId={state.gameId} header={state.header} gameboard={state.board} fixed={state.fixed}
+                winModal={winModal} 
+                handleNextGame={handleNextGame}
+                lastGame={state.gameId===gameCount()}  
+            /> 
+            <GameBoard gameId={state.gameId} header={state.header} gameboard={state.board} fixed={state.fixed}
             handleReset={handleReset} handleClick={handleClick} />
             
             <TokenCount tokenCount={state.tokenLeft} />

@@ -155,9 +155,6 @@ const games=[
 export const gameCount=()=>(games.length)
 
 export const getGame=(num)=>{
-    console.log("new game "+ num)
-
     let game=games.filter(g=>g.id===num)
-    
     return game[0]
 }

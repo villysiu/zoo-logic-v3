@@ -1,7 +1,7 @@
 import Animal from "./Animal"
 
 const GameGrid = ({gameboard, fixed, handleClick})=>{
-    console.log(gameboard)
+    // console.log(gameboard)
     return(
         <>
                 {gameboard.map((rows, rid)=>(
