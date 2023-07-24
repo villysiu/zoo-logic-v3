@@ -1,5 +1,4 @@
 import { QuestionCircle } from "react-bootstrap-icons"
-import About from "./About"
 const Header = ({setAbout}) => {
     return (
         <div className='logo-wrapper'>

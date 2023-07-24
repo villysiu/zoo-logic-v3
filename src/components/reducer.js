@@ -1,20 +1,28 @@
- import { getLevel } from "./functions";
- import { getGame } from "../data/games";
+ import { getLevel } from "./functions"; 
+ import { getGame, gameCount } from "../data/games";
 export const reducer = (state, action)=>{
-    console.log(action.type)
+    // console.log(action.type)
+    // console.log(action.payload)
     switch(action.type){
         
         case 'SETGAME':
-            const lv=getLevel()
-            const g=getGame(lv)
-            return {...state, gameId: g.id, header: g.header, board: g.board, ...countTokens(g.board)}
+            let lv=getLevel()
+            let g=getGame(lv)
+            return {...state, loading: false, gameId: g.id, header: g.header, board: g.board, ...countTokens(g.board)}
 
         case 'CLICK':
             return {...state, ...updateBoard(state.board.map(r=>[...r]), 
                                     action.payload.r, action.payload.c, 
                                     [...state.tokenLeft]) }
-           
 
+        case 'NEXTGAME':
+            const count=gameCount()
+            localStorage.setItem('level', state.gameId===count? 1: state.gameId+1)
+            return {...state, loading: true}
+
+        case 'RESET':
+            return {...state, loading: true}
+    
         default:
             break;
     }
@@ -32,6 +40,7 @@ const countTokens=(board)=>{
             }
         }
     }
+    console.log(arr)
     return {tokenLeft: arr, fixed: fixed}
 }
 
@@ -44,5 +53,6 @@ const updateBoard = (board, r,c, tokenLeft) =>{
     tokenLeft[board[r][c]]++;
    
     board[r][c]=animalId
+    console.log(tokenLeft)
     return {board: board, tokenLeft: tokenLeft}
 }

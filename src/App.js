@@ -6,21 +6,19 @@ import Header from './components/Header'
 import About from './components/About';
 import Footer from './components/Footer';
 
-
 function App() {
   
   const [about, setAbout]=useState(true) 
-
+  console.log("app")
   
   return (
 
     <div className="App">
-      {about && <About show={about} setShow={setAbout} /> }
+      <About show={about} setShow={setAbout} />
       
-          {/* <Navheader setAbout={setAbout} /> */}
-          <Header setAbout={setAbout} />
-          <Main />
-          <Footer />
+      <Header setAbout={setAbout} />
+      <Main />
+      <Footer />
 
     </div>
     

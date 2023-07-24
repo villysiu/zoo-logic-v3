@@ -1,23 +1,25 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-const WinModal = ({show, setShow, msg, setLastGame }) => {
+const WinModal = ({winModal, showWinModal, handleNextGame, lastGame }) => {
   
-  const handleClose = () => {
-    setShow(false);
-    setLastGame(false)    
-  }
-
+console.log("winModal")
   return (
     <>
-      <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton>
+      <Modal show={winModal} backdrop="static" centered>
+        <Modal.Header>
           <Modal.Title>You won!</Modal.Title>
         </Modal.Header>
-        <Modal.Body></Modal.Body>
+        <Modal.Body>
+          {lastGame && 
+          <>
+            You have completed all level.
+          </>
+          }
+        </Modal.Body>
         <Modal.Footer>
-          <Button variant="success" onClick={handleClose}>
-          {msg}
+          <Button variant="success" onClick={handleNextGame}>
+          {lastGame ? <>Back to game 1</> : <>Next Game</>}
           </Button>
         </Modal.Footer>
       </Modal>
