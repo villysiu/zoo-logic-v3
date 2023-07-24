@@ -1,13 +1,23 @@
 .App {
   text-align: center;
 }
-
+:root{
+  --gb_width: 400px;
+  
+}
+@media all and (max-width: 399px) {
+  :root{
+    --gb_width: 100vw;
+  }
+}
 .gameboard {
-  width: 350px;
-  height:350px;
+  width: var(--gb_width);
+  height: var(--gb_width);
+  
   border: 1px;
   margin-left: auto;
   margin-right: auto;
+  background-color: rgba(142, 237, 142, 0.523);
 }
 
 .count {
@@ -18,7 +28,7 @@
   margin-right: auto;    
 }
 
-@media (min-width: 650px) and (min-height: 651px){
+/* @media (min-width: 650px) and (min-height: 651px){
   .gameboard {
     width: 600px;
     height: 600px;
@@ -29,31 +39,9 @@
     height: calc(600px*0.7/3);
     padding: 2px;
   }
-}
+} */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  /* background-color: #282c34; */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-
-}
-
-.App-link {
+/* .App-link {
   color: #61dafb;
 }
 
@@ -64,23 +52,54 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 .center {
   text-align: center;
   padding: 30px;
 }
-.game-top-header {
-  width: 75%;
-  background-color: rgba(142, 237, 142, 0.523);
-  border: 1px solid black;
+.row-1-col-4 {
+  display: flex;
+  
 }
-.game-left-header {
-  width: 25%;
-  background-color: rgba(142, 237, 142, 0.523);
+.row-1-col-1 {
+  width: calc(var(--gb_width) / 4);
+  height: calc(var(--gb_width) / 4);
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 }
+.animal{
+  display: flex;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+}
+.row-1-col-3 {
+  width: calc(var(--gb_width) / 4 * 3);
+  height: calc(var(--gb_width) / 4);
+  /* border: 1px solid black; */
+  display: flex;
+}
+.row-3-col-4 {
+  display: flex;
+}
+.row-3-col-1 {
+  width: calc(var(--gb_width) / 4 );
+  height: calc(var(--gb_width) / 4 *3);
+  display: flex;
+  flex-direction: column;
+}
+.row-3-col-3 {
+  width: calc(var(--gb_width) / 4 * 3);
+  height: calc(var(--gb_width) / 4 * 3);
+}
+
+
 .square {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: calc(100%/3);
   height: calc(100%/3);
 }

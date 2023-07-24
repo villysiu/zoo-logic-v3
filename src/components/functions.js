@@ -1,4 +1,5 @@
 export const getLevel = () => {
+    console.log(localStorage.getItem('level'))
     if(!localStorage.getItem('level')){
         localStorage.setItem('level', 1)
         return 1
@@ -7,17 +8,17 @@ export const getLevel = () => {
     return parseInt(localStorage.getItem('level'))
 }
 
-  export const countTokens = arr =>{
-    let count = [9, 3, 3, 3]
-    for(let r=0;r<arr.length;r++){
-        for(let c=0;c<arr[0].length;c++) {
+//   export const countTokens = arr =>{
+//     let count = [9, 3, 3, 3]
+//     for(let r=0;r<arr.length;r++){
+//         for(let c=0;c<arr[0].length;c++) {
 
-            let idx=arr[r][c]
-            count[idx]-=1
-        }
-    }
-    return count;
-}
+//             let idx=arr[r][c]
+//             count[idx]-=1
+//         }
+//     }
+//     return count;
+// }
 
 // [[[2,1],[3,1],[1,1]],[[3,2],[0,0],[1,1]]],
 export const checkBoard = (arr, headers) =>{
