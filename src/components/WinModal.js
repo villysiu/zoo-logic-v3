@@ -7,7 +7,7 @@ console.log("winModal")
   return (
     <>
       <Modal show={winModal} backdrop="static" centered>
-        <Modal.Header>
+        <Modal.Header className="win-modal">
           <Modal.Title>You won!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -17,7 +17,7 @@ console.log("winModal")
           </>
           }
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="win-modal">
           <Button variant="success" onClick={handleNextGame}>
           {lastGame ? <>Back to game 1</> : <>Next Game</>}
           </Button>
