@@ -3,7 +3,7 @@ import { useEffect, useState, useReducer} from "react"
 import GameBoard from "./GameBoard";
 import TokenCount from './TokenCount';
 import WinModal from './WinModal'
-import { gameCount } from "../data/games.js";
+// import { gameCount } from "../data/games.js";
 import { checkBoard } from "./functions";
 import {reducer} from './reducer'
 const Main = () => {
@@ -11,29 +11,31 @@ const Main = () => {
     console.log("main")
     
     const [winModal, showWinModal] = useState(false);
-    const initialState = {loading: true, gameId: null, header: null, board: [], tokenLeft: [0,3,3,3]}
+    const initialState = {
+                            loading: true, 
+                            gameId: null, 
+                            header: null, 
+                            board: [], 
+                            tokenLeft: [0,3,3,3]
+                        }
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const handleClick=(row, col)=>{
         dispatch({type: 'CLICK', payload: {r: row, c:col }})
     }
-    const handleNextGame =()=>{
-        console.log("in going next game")
-        dispatch({type: 'NEXTGAME'})
-        showWinModal(false)
-    }
+    
     const handleReset = () =>{
         dispatch({type: 'RESET'})
     }
     
     useEffect(()=>{
-        console.log("load SETGAME")
+    
         if(state.loading)
             dispatch({type: 'SETGAME'})
     }, [state.loading])
 
     useEffect(()=>{
-        console.log("check winning?")
+        
         if(state.tokenLeft[0]===9 && checkBoard(state.board, state.header)){
             showWinModal(true)
             
@@ -49,11 +51,18 @@ const Main = () => {
         <>
             <WinModal 
                 winModal={winModal} 
-                handleNextGame={handleNextGame}
-                lastGame={state.gameId===gameCount()}  
+                showWinModal = {showWinModal}
+                gameId={state.gameId}  
+                dispatch = {dispatch}
             /> 
-            <GameBoard gameId={state.gameId} header={state.header} gameboard={state.board} fixed={state.fixed}
-            handleReset={handleReset} handleClick={handleClick} />
+            <GameBoard 
+                gameId={state.gameId} 
+                header={state.header} 
+                gameboard={state.board} 
+                fixed={state.fixed}
+                handleReset={handleReset} 
+                handleClick={handleClick} 
+            />
             
             <TokenCount tokenCount={state.tokenLeft} />
    
