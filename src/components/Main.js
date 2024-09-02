@@ -24,9 +24,9 @@ const Main = () => {
         dispatch({type: 'CLICK', payload: {r: row, c:col }})
     }
     
-    const handleReset = () =>{
-        dispatch({type: 'RESET'})
-    }
+    // const handleReset = () =>{
+    //     dispatch({type: 'RESET'})
+    // }
     
     useEffect(()=>{
     
@@ -60,8 +60,9 @@ const Main = () => {
                 header={state.header} 
                 gameboard={state.board} 
                 fixed={state.fixed}
-                handleReset={handleReset} 
+                // handleReset={handleReset} 
                 handleClick={handleClick} 
+                dispatch = {dispatch}
             />
             
             <TokenCount tokenLeft={state.tokenLeft} />

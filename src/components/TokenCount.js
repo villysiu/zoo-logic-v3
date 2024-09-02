@@ -9,10 +9,10 @@ const TokenCount = memo(({tokenLeft}) => {
             {
                 tokenLeft.map((count, idx) => (
                     idx!==0 &&   
-                <div className="token_count_box" key={idx} >
-                    <Animal animalId={idx} />{' '}: {count}
-                </div>
-        
+                    <div className="token_count_box" key={idx} >
+                        <Animal animalId={idx} />{' '}: {count}
+                    </div>
+            
                 ))
             }
             

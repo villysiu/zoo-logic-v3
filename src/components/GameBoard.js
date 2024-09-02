@@ -1,18 +1,16 @@
 import { Button } from "react-bootstrap"
 import AnimalHeader from './AnimalHeader';
 import GameGrid from './GameGrid';
-const GameBoard = ({gameId, header, gameboard, fixed, handleReset, handleClick}) =>{
+import GameLevel from './GameLevel'
+const GameBoard = ({gameId, header, gameboard, fixed, dispatch, handleClick}) =>{
     console.log('gameboard')
+
+    
     return(
         <div className="gameboard">
                 
             <div className='row-1-col-4'>
-                <div className='row-1-col-1'>
-                    Level {gameId}<br/>
-                    <Button variant="success" size="sm" onClick={handleReset}>
-                        Reset
-                    </Button>
-                </div>
+                <GameLevel gameId = {gameId} dispatch={dispatch} />
                 <AnimalHeader arr={header[0]} />
                 
             </div>
