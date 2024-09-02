@@ -60,6 +60,9 @@
   justify-content: center;
   align-items: center;
 }
+.animal_icon {
+  width: 50px;
+}
 .row-1-col-3 {
   width: calc(var(--gb_width) / 4 * 3);
   height: calc(var(--gb_width) / 4);
