@@ -64,7 +64,7 @@ const Main = () => {
                 handleClick={handleClick} 
             />
             
-            <TokenCount tokenCount={state.tokenLeft} />
+            <TokenCount tokenLeft={state.tokenLeft} />
    
         </>
        

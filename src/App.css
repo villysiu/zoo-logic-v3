@@ -19,40 +19,23 @@
   margin-right: auto;
   background-color: rgba(142, 237, 142, 0.523);
 }
-
-.count {
-  width: calc(350px*0.7);
-  height: calc(350px*0.7/3);
-  padding: 1px;
+.token_count_wrapper
+ {
+  display: flex;
+  width: calc(var(--gb_width) * 0.7);
   margin-left: auto;
-  margin-right: auto;    
+  margin-right: auto;  
+  margin-top: 2rem;  
+  margin-bottom: 3rem;
+}
+.token_count_box {
+  width: calc(var(--gb_width) * 0.7 / 3);
+  display: flex;
+  align-items: center;
+  padding: 5px;
 }
 
-/* @media (min-width: 650px) and (min-height: 651px){
-  .gameboard {
-    width: 600px;
-    height: 600px;
-    border: 1px
-  }
-  .count {
-    width: calc(600px*0.7);
-    height: calc(600px*0.7/3);
-    padding: 2px;
-  }
-} */
 
-/* .App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 .center {
   text-align: center;
   padding: 30px;
