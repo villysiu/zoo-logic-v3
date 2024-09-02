@@ -1,7 +1,10 @@
 import Animal from "./Animal"
 
-const GameGrid = ({gameboard, fixed, handleClick})=>{
+const GameGrid = ({gameboard, fixed, dispatch})=>{
     // console.log(gameboard)
+    const handleClick=(row, col)=>{
+        dispatch({type: 'CLICK', payload: {r: row, c:col }})
+    }
     return(
         <>
                 {gameboard.map((rows, rid)=>(

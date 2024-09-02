@@ -20,9 +20,7 @@ const Main = () => {
                         }
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    const handleClick=(row, col)=>{
-        dispatch({type: 'CLICK', payload: {r: row, c:col }})
-    }
+    
     
     // const handleReset = () =>{
     //     dispatch({type: 'RESET'})
@@ -61,7 +59,7 @@ const Main = () => {
                 gameboard={state.board} 
                 fixed={state.fixed}
                 // handleReset={handleReset} 
-                handleClick={handleClick} 
+                // handleClick={handleClick} 
                 dispatch = {dispatch}
             />
             

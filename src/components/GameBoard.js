@@ -19,7 +19,7 @@ const GameBoard = ({gameId, header, gameboard, fixed, dispatch, handleClick}) =>
                     <AnimalHeader arr={header[1]} />
                 </div>
                 <div className='row-3-col-3'>
-                    <GameGrid gameboard={gameboard} fixed={fixed} handleClick={handleClick} />
+                    <GameGrid gameboard={gameboard} fixed={fixed} dispatch={dispatch} />
                 </div>
             </div>
         
