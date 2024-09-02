@@ -154,3 +154,8 @@
     width: calc(100vw - 24px) !important
   }
 }
+
+.win-modal {
+  border-bottom: 0 !important;
+  border-top: 0 !important;
+}
