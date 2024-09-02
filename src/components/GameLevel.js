@@ -7,7 +7,7 @@ const GameLevel = ({gameId, dispatch}) => {
     }
 
     return (
-        <div className='row-1-col-1'>
+        <div className='game_box level'>
             Level {gameId}<br/>
             <Button variant="success" size="sm" onClick={handleReset}>
                 Reset

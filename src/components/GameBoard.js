@@ -9,16 +9,16 @@ const GameBoard = ({gameId, header, gameboard, fixed, dispatch, handleClick}) =>
     return(
         <div className="gameboard">
                 
-            <div className='row-1-col-4'>
+            <div className='horizontal_header'>
                 <GameLevel gameId = {gameId} dispatch={dispatch} />
                 <AnimalHeader arr={header[0]} />
                 
             </div>
-            <div className='row-3-col-4'>
-                <div className='row-3-col-1'>
+            <div className='horizontal_header'>
+                <div className='vertical_header'>
                     <AnimalHeader arr={header[1]} />
                 </div>
-                <div className='row-3-col-3'>
+                <div >
                     <GameGrid gameboard={gameboard} fixed={fixed} dispatch={dispatch} />
                 </div>
             </div>

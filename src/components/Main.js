@@ -3,9 +3,9 @@ import { useEffect, useState, useReducer} from "react"
 import GameBoard from "./GameBoard";
 import TokenCount from './TokenCount';
 import WinModal from './WinModal'
-// import { gameCount } from "../data/games.js";
 import { checkBoard } from "./functions";
 import {reducer} from './reducer'
+
 const Main = () => {
 
     console.log("main")
@@ -20,11 +20,6 @@ const Main = () => {
                         }
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    
-    
-    // const handleReset = () =>{
-    //     dispatch({type: 'RESET'})
-    // }
     
     useEffect(()=>{
     
@@ -58,8 +53,6 @@ const Main = () => {
                 header={state.header} 
                 gameboard={state.board} 
                 fixed={state.fixed}
-                // handleReset={handleReset} 
-                // handleClick={handleClick} 
                 dispatch = {dispatch}
             />
             

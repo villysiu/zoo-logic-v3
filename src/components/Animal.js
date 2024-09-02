@@ -4,7 +4,7 @@ import hippo from '../images/hippo.png'
 import notFound from '../images/image-not-found-icon.png'
 import { memo } from 'react'
 const Animal = ({animalId}) => {
-
+    console.log(animalId)
     if(animalId<0 || animalId>3) 
         return <img src={notFound} className="animal_icon" alt="" />
     

@@ -8,7 +8,7 @@ export const reducer = (state, action)=>{
         case 'SETGAME':
             let lv=getLevel()
             let g=getGame(lv)
-            return {...state, loading: false, gameId: g.id, header: g.header, board: g.board, ...countTokens(g.board)}
+            return {...state, loading: false, gameId: g.id, header: g.header, board: g.board, ...setupFixedandTokenLeft(g.board)}
 
         case 'CLICK':
             return {...state, ...updateBoard(state.board.map(r=>[...r]), 
@@ -28,20 +28,21 @@ export const reducer = (state, action)=>{
     }
 }
 
-const countTokens=(board)=>{
-    let arr=[0,3,3,3]
+const setupFixedandTokenLeft = (board) =>{
+    let tokenLeft=[0,3,3,3]
     let fixed=new Set()
     for(let r=0;r<board.length;r++){
         for(let c=0;c<board[0].length;c++){
             if(board[r][c]!==0){
-                arr[board[r][c]]--;
-                arr[0]++;
-                fixed.add(`${r},${c}`)
+                tokenLeft[board[r][c]]--;
+                tokenLeft[0]++;
+                fixed.add(`[${r},${c}]`)
+                // fixed.add(r*3 + c)
             }
         }
     }
-    console.log(arr)
-    return {tokenLeft: arr, fixed: fixed}
+    console.log(tokenLeft)
+    return {tokenLeft: tokenLeft, fixed: fixed}
 }
 
 const updateBoard = (board, r,c, tokenLeft) =>{

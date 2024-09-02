@@ -40,55 +40,37 @@
   text-align: center;
   padding: 30px;
 }
-.row-1-col-4 {
-  display: flex;
-  
-}
-.row-1-col-1 {
+
+.game_box {
   width: calc(var(--gb_width) / 4);
   height: calc(var(--gb_width) / 4);
   border: 1px solid black;
   display: flex;
-  flex-direction: column;
+  
   justify-content: center;
   align-items: center;
   
 }
+.level {
+  flex-direction: column;
+}
 .animal{
-  display: flex;
-  flex-direction: row !important;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row ;
 }
 .animal_icon {
   width: 50px;
 }
-.row-1-col-3 {
-  width: calc(var(--gb_width) / 4 * 3);
-  height: calc(var(--gb_width) / 4);
-  /* border: 1px solid black; */
+
+.horizontal_header, .gameboard_row {
   display: flex;
+  
 }
-.row-3-col-4 {
-  display: flex;
-}
-.row-3-col-1 {
-  width: calc(var(--gb_width) / 4 );
-  height: calc(var(--gb_width) / 4 *3);
+.vertical_header {
+  
   display: flex;
   flex-direction: column;
 }
-.row-3-col-3 {
-  width: calc(var(--gb_width) / 4 * 3);
-  height: calc(var(--gb_width) / 4 * 3);
-}
 
-
-.square {
-  /* border: 1px solid black; */
-  width: calc(100%/3);
-  height: calc(100%/3);
-}
 .logo-wrapper {
   display: flex;
   justify-content: space-between;
@@ -102,11 +84,11 @@
   font-size: 2rem;
   padding: 0px
  }
- .rounded {
+ /* .rounded {
   border: 1px solid black;
   padding: 5px;
   
- }
+ } */
  .dropdown-toggle::after {
   display: none !important; 
 }
