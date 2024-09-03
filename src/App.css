@@ -19,108 +19,89 @@
   margin-right: auto;
   background-color: rgba(142, 237, 142, 0.523);
 }
-
-.count {
-  width: calc(350px*0.7);
-  height: calc(350px*0.7/3);
-  padding: 1px;
+.token_count_wrapper
+ {
+  display: flex;
+  width: calc(var(--gb_width) * 0.7);
   margin-left: auto;
-  margin-right: auto;    
+  margin-right: auto;  
+  margin-top: 2rem;  
+  margin-bottom: 3rem;
+}
+.token_count_box {
+  width: calc(var(--gb_width) * 0.7 / 3);
+  display: flex;
+  align-items: center;
+  padding: 5px;
 }
 
-/* @media (min-width: 650px) and (min-height: 651px){
-  .gameboard {
-    width: 600px;
-    height: 600px;
-    border: 1px
-  }
-  .count {
-    width: calc(600px*0.7);
-    height: calc(600px*0.7/3);
-    padding: 2px;
-  }
-} */
 
-/* .App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 .center {
   text-align: center;
   padding: 30px;
 }
-.row-1-col-4 {
-  display: flex;
-  
-}
-.row-1-col-1 {
+
+.game_box {
   width: calc(var(--gb_width) / 4);
   height: calc(var(--gb_width) / 4);
   border: 1px solid black;
   display: flex;
-  flex-direction: column;
+  
   justify-content: center;
   align-items: center;
   
 }
+.level {
+  flex-direction: column;
+}
 .animal{
-  display: flex;
-  flex-direction: row !important;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row ;
 }
-.row-1-col-3 {
-  width: calc(var(--gb_width) / 4 * 3);
-  height: calc(var(--gb_width) / 4);
-  /* border: 1px solid black; */
-  display: flex;
+.animal_icon {
+  width: 50px;
 }
-.row-3-col-4 {
+
+.horizontal_header, .gameboard_row {
   display: flex;
+  
 }
-.row-3-col-1 {
-  width: calc(var(--gb_width) / 4 );
-  height: calc(var(--gb_width) / 4 *3);
+.vertical_header {
+  
   display: flex;
   flex-direction: column;
 }
-.row-3-col-3 {
-  width: calc(var(--gb_width) / 4 * 3);
-  height: calc(var(--gb_width) / 4 * 3);
-}
 
-
-.square {
-  /* border: 1px solid black; */
-  width: calc(100%/3);
-  height: calc(100%/3);
-}
 .logo-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: var(--gb_width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+
+  
 }
 .logo{
-  font-family: "Arial";
+  /* font-family: "Arial"; */
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 'Happy Monkey'; */
   color: green;
   font-size: 2rem;
   padding: 0px
  }
- .rounded {
+ .fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+ /* .rounded {
   border: 1px solid black;
   padding: 5px;
   
- }
+ } */
  .dropdown-toggle::after {
   display: none !important; 
 }

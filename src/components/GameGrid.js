@@ -1,28 +1,42 @@
 import Animal from "./Animal"
 
-const GameGrid = ({gameboard, fixed, handleClick})=>{
-    // console.log(gameboard)
+const GameGrid = ({gameboard, fixed, dispatch})=>{
+    
+    const handleClick=(row, col, val)=>{
+        dispatch({type: 'CLICK', payload: {r: row, c:col }})
+    }
+    const FixedAnimal = ({cid, val}) =>{
+        return (
+            <div className='game_box animal' style={{opacity: '50%'}} > 
+                <Animal animalId={val} />
+            </div> 
+        )
+    }
+    const AnimalInput = ({rid, cid, val}) =>{
+        return (
+            <div className='game_box animal' onClick={()=>handleClick(rid, cid)}> 
+                <Animal animalId={val} />
+            </div>
+        )
+    }
     return(
         <>
-                {gameboard.map((rows, rid)=>(
-                    <div key={rid} 
-                    className='row-1-col-3'
-                    >
-                       
-                        {rows.map((val, cid)=>(
-                            fixed.has(`${rid},${cid}`) ? 
-                                <div key={cid} className='row-1-col-1 animal' style={{opacity: '50%'}} > 
-                                    <Animal animalId={val} />
-                                </div> 
-                            :
-                            
-                            <div key={cid} className='row-1-col-1 animal'
-                                onClick={()=>handleClick(rid, cid)}> 
-                                <Animal animalId={val} />
-                            </div>
-                        ))}
-                    </div>
-                ))}
+            {gameboard.map((rows, rid)=>(
+                <div key={rid} className='gameboard_row'>
+                    
+                    {rows.map((val, cid)=>(
+                        <div key={cid} >
+                        {
+                            fixed.has(`[${rid},${cid}]`) ? 
+                                <FixedAnimal cid={cid} val={val} />
+                                :
+                                <AnimalInput rid={rid} cid= {cid} val={val} />
+                        }
+                        </div>
+                        
+                    ))}
+                </div>
+            ))}
         </>
     )
 }

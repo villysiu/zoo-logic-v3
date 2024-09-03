@@ -1,21 +1,22 @@
 import Animal from "./Animal"
 import { memo } from "react"
-const TokenCount = memo(({tokenCount}) => {  
-    // console.log(tokenCount)
+const TokenCount = memo(({tokenLeft}) => {  
+    // console.log(tokenLeft)
     return(
-        <table className="count"><tbody>
-            <tr>
-                {
-                    tokenCount.map((count, idx) => (
-                     idx!==0 &&   
-                    <td key={idx} width='33.3333%'>
+
+        <div className="token_count_wrapper">
+            
+            {
+                tokenLeft.map((count, idx) => (
+                    idx!==0 &&   
+                    <div className="token_count_box" key={idx} >
                         <Animal animalId={idx} />{' '}: {count}
-                    </td>
-         
-                    ))
-                }
-            </tr>
-            </tbody></table>
+                    </div>
+            
+                ))
+            }
+            
+        </div>
  
     )
 })
