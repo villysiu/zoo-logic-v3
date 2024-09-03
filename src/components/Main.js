@@ -16,7 +16,9 @@ const Main = () => {
                             gameId: null, 
                             header: null, 
                             board: [], 
-                            tokenLeft: [0,3,3,3]
+                            tokenLeft: [0,3,3,3],
+                            fixed: null
+
                         }
     const [state, dispatch] = useReducer(reducer, initialState);
 

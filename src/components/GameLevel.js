@@ -1,5 +1,5 @@
-
 import { Button } from "react-bootstrap"
+
 const GameLevel = ({gameId, dispatch}) => {
 
     const handleReset = () => {

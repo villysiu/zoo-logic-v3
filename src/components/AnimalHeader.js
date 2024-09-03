@@ -2,8 +2,6 @@ import { memo } from 'react'
 import Animal from "./Animal";
 
 const AnimalHeader = memo(({arr}) => {
-    // console.log("AnimalHeader")
-    
     return (
         <>
             { 

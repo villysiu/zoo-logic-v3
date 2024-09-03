@@ -1,11 +1,9 @@
-import { Button } from "react-bootstrap"
 import AnimalHeader from './AnimalHeader';
 import GameGrid from './GameGrid';
 import GameLevel from './GameLevel'
-const GameBoard = ({gameId, header, gameboard, fixed, dispatch, handleClick}) =>{
-    console.log('gameboard')
 
-    
+const GameBoard = ({gameId, header, gameboard, fixed, dispatch}) =>{
+
     return(
         <div className="gameboard">
                 

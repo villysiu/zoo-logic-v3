@@ -75,15 +75,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: var(--gb_width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+
+  
 }
 .logo{
-  font-family: "Arial";
+  /* font-family: "Arial"; */
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 'Happy Monkey'; */
   color: green;
   font-size: 2rem;
   padding: 0px
  }
+ .fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
  /* .rounded {
   border: 1px solid black;
   padding: 5px;
